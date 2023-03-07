@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title style="color:white; font-weight:bold"   >
+      ValeBar
+    </ion-title>
+
+
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar style="text-align: left;" placeholder="Pesquisar"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Refrigerantes</ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding *ngFor="let refri of refrigerantes"   >
+        <ion-item >
+
+          <ion-label style="font-size:18px" >{{refri.nome}}</ion-label><pre style="color:green">{{refri.valor | currency:"BRL"}} </pre>
+          <ion-icon (click)="verifPedido2(refri.id, 1, refri.nome,refri.valor)" color="danger" name="remove-circle-outline" style="width:35px;height: 35px;cursor: pointer;"></ion-icon>
+
+          <p >  </p>
+          <ion-icon  (click)="verifPedido(refri.id, 1, refri.nome, refri.valor)" color="success" name="add-circle-outline" style="width:35px;height: 35px;cursor: pointer;" ></ion-icon>
+
+        </ion-item>
+      </ion-item-sliding>
+
+      <ion-item-divider>
+        <ion-label>Bebidas</ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let beb of bebidas">
+        <ion-item >
+
+          <ion-label style="font-size:18px" >{{beb.nome}}</ion-label><pre style="color:green">{{beb.valor | currency:"BRL"}} </pre>
+          <ion-icon (click)="verifPedido2(beb.id, 1, beb.nom, beb.valor)" color="danger" name="remove-circle-outline" style="width:35px;height: 35px;cursor: pointer;"></ion-icon>
+
+          <p >  </p>
+          <ion-icon  (click)="verifPedido(beb.id, 1, beb.nome, beb.valor)" color="success" name="add-circle-outline" style="width:35px;height: 35px;cursor: pointer;" ></ion-icon>
+
+        </ion-item>
+      </ion-item-sliding>
+
+
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar >
+        <ion-tab-button (click)="home()">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+          <ion-label>Finalizar</ion-label>
+          <ion-badge></ion-badge>
+        </ion-tab-button>
+
+
+        <ion-tab-button (click)="comidas()">
+          <ion-icon name="fast-food-outline" ></ion-icon>
+          <ion-label>Comidas</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

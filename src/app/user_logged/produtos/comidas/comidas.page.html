@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title style="color:white; font-weight:bold"   >
+      ValeBar
+    </ion-title>
+
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar style="text-align: left;" placeholder="Pesquisar"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Lanches</ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding *ngFor="let lanche of lanches">
+        <ion-item >
+
+          <ion-label style="font-size:18px" for="Lanches">{{lanche.nome}}</ion-label><pre style="color:green">{{lanche.valor | currency:"BRL"}} </pre>
+          <ion-icon id="lanche" (click)="verifPedido2(lanche.id, 1, lanche.nome, lanche.valor)" color="danger" name="remove-circle-outline" style="width:35px;height: 35px;cursor: pointer;"></ion-icon>
+
+          <p >  </p>
+          <ion-icon click="update()" (click)="verifPedido(lanche.id, 1, lanche.nome, lanche.valor)" color="success" name="add-circle-outline" style="width:35px;height: 35px;cursor: pointer;" ></ion-icon>
+
+        </ion-item>
+      </ion-item-sliding>
+
+
+      <ion-item-divider>
+        <ion-label>Porções</ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding *ngFor="let porcao of porcoes">
+        <ion-item >
+
+          <ion-label style="font-size:18px" for="porcoes" >{{porcao.nome}}</ion-label><pre style="color:green">{{porcao.valor | currency:"BRL"}} </pre>
+          <ion-icon (click)="verifPedido2(porcao.id, 1, porcao.nome, porcao.valor)" color="danger" name="remove-circle-outline" style="width:35px;height: 35px;cursor: pointer;"></ion-icon>
+
+          <p >  </p>
+          <ion-icon  (click)="verifPedido(porcao.id, 1, porcao.nome, porcao.valor)" color="success" name="add-circle-outline" style="width:35px;height: 35px;cursor: pointer;" ></ion-icon>
+
+        </ion-item>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+
+
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar >
+        <ion-tab-button (click)="home()">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+          <ion-label>Finalizar</ion-label>
+          <ion-badge></ion-badge>
+        </ion-tab-button>
+
+
+        <ion-tab-button (click)="bebidas()">
+          <ion-icon name="beer-outline" ></ion-icon>
+          <ion-label>Bebidas</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+</ion-toolbar>
+</ion-footer>

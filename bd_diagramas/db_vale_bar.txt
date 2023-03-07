@@ -1,0 +1,63 @@
+create database vale_bar;
+use vale_bar;
+
+
+CREATE TABLE empresas(
+	email VARCHAR(255) PRIMARY KEY,
+	nomeEmpresa VARCHAR(100),
+    	senha VARCHAR(255),
+    	nomeProprietario VARCHAR(100),
+    	cpfCnpj VARCHAR(20),
+    	telefone VARCHAR(13)
+    	
+);
+
+CREATE TABLE enderecos(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    cep VARCHAR(9),
+    cidade VARCHAR(255) ,
+    bairro VARCHAR(255) ,
+    rua VARCHAR(255) ,
+    numero INT,
+    id_empresa VARCHAR(255),
+    FOREIGN KEY (id_empresa) REFERENCES empresas(email) ON DELETE CASCADE ON UPDATE CASCADE
+    
+);
+CREATE TABLE funcionarios(
+	email VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255),
+    nome VARCHAR(100),
+    telefone VARCHAR(13),
+    cargo VARCHAR(100),
+    codEmpresa VARCHAR(255),
+    foreign key (codEmpresa) REFERENCES empresas(email) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+CREATE TABLE pedidos(
+	idMesa INT PRIMARY KEY,
+    cliente VARCHAR(100),
+    quantidade INT,
+    prodConsumidos VARCHAR(255),
+    observacao  TEXT,
+    idEmpresa VARCHAR(255),
+    FOREIGN KEY (idEmpresa) REFERENCES empresas(email) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE produtos(
+	id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    tipo VARCHAR(100),
+    quantidade INT,
+    valor FLOAT,
+	idEmpresa VARCHAR(255),
+	FOREIGN KEY (idEmpresa)	REFERENCES empresas(email) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE pedidosProdutos(
+	idPedido INT,
+    idProduto INT,
+    PRIMARY KEY(idPedido, idProduto),
+    FOREIGN KEY (idPedido) REFERENCES pedidos(idMesa) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (idProduto) REFERENCES produtos(id) ON DELETE CASCADE ON UPDATE CASCADE
+);

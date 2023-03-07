@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title class="title"  >
+      ValeBar
+    </ion-title>
+   <!--<ion-button slot="primary" (click)="produtos()">+Produto</ion-button>-->
+   <!--<ion-searchbar  style="height: 0px;"></ion-searchbar>-->
+    <!--<ion-button slot="primary" href="http://localhost:8102/registrar">Registrar</ion-button>-->
+    <ion-icon name="log-out-outline" slot="primary" style="color:red; min-width: 50px; min-height:25px;cursor: pointer;"  (click)="logOut()"></ion-icon>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+<ion-list>
+    <!--<ion-img src="/src/assets/icon/icon.png" ></ion-img>-->
+
+    <ion-card>
+      <ion-item-sliding *ngFor="let user of users">
+      <ion-card-title color="primary" class="center-text" style="font-size: 30px;text-align: center;text-transform: uppercase"><b>{{user.nomeEmpresa}}</b></ion-card-title>
+      <ion-item>
+        <ion-label style="font-size: 20px;"><b>Email:</b> {{user.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-size: 20px;"><b>Proprietário:</b> {{user.nomeProprietario}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-size: 20px;"><b>Cpf/Cnpj:</b> {{user.cpfCnpj}}</ion-label>
+      </ion-item>
+
+
+    </ion-item-sliding>
+
+    </ion-card>
+  </ion-list>
+
+
+
+<!--<button><ion-icon style="width: 50px; height: 50px;"  name="add-circle-outline"></ion-icon></button>-->
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar  >
+    <ion-tab-button (click)="home()">
+      <ion-icon color="dark"  name="create-outline"  ></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="produtos()">
+      <ion-icon color="dark"  name="create-outline" ></ion-icon>
+      <ion-label>Produtos</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
+
+

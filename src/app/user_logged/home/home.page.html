@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title class="title"  >
+      ValeBar
+    </ion-title>
+    <ion-icon name="person-outline" slot="primary" style="color:white; min-width: 50px; min-height:25px;cursor: pointer;" (click)="perfil()"></ion-icon>
+
+   <!--<ion-searchbar  style="height: 0px;"></ion-searchbar>-->
+    <!--<ion-button slot="primary" href="http://localhost:8102/registrar">Registrar</ion-button>-->
+  </ion-toolbar>
+
+</ion-header>
+<ion-content >
+<div >
+    <ion-item >
+      <ion-item-sliding *ngFor="let mesa of comandas">
+      <ion-card-title color="primary" class="center-text"><b>Mesa {{mesa.idMesa}}</b></ion-card-title>
+      <p class="color-black"><b><ion-icon name="person-outline"></ion-icon> </b>{{mesa.cliente}}</p>
+      <p class="color-red">Total:{{mesa.total | currency:"BRL" }}</p>
+
+      <ion-button color="primary" (click)="viewComanda(mesa.idMesa, mesa.cliente, mesa.total)"  size="full"  style="font-size: 12px;">Itens</ion-button>
+    </ion-item-sliding>
+
+    </ion-item>
+  </div>
+
+
+
+
+
+</ion-content>
+<!--<button><ion-icon style="width: 50px; height: 50px;"  name="add-circle-outline"></ion-icon></button>-->
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar  >
+        <ion-tab-button (click)="createPedido()">
+          <ion-icon name="cart-outline" ></ion-icon>
+          <ion-label>Vendas</ion-label>
+          <ion-badge></ion-badge>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="home()">
+          <ion-icon color="dark"  name="create-outline"  ></ion-icon>
+          <ion-label>Comandas</ion-label>
+        </ion-tab-button>
+
+
+        <ion-tab-button >
+          <ion-icon name="information-circle"></ion-icon>
+          <ion-label>About</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+
+  </ion-toolbar>
+</ion-footer>
+
+

@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title style="color:white; font-weight:bold" (click)="login()">
+      ValeBar
+    </ion-title>
+    <ion-button slot="primary" (click)="login()">Login</ion-button>
+    <!--<ion-button slot="primary" href="http://localhost:8102/registrar">Registrar</ion-button>-->
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <div class="flex-center">
+    <ion-card >
+      <ion-card-header>
+        <ion-card-title class="title" color="primary" >Registrar</ion-card-title>
+      </ion-card-header>
+
+    <ion-card-content>
+     <form (ngSubmit)="authCadastro()" ng-app="App">
+        <ion-item >
+          <ion-label class="title" for="empresa" position="floating">Empresa</ion-label>
+          <ion-input type="text" id="empresa" name="empresa" [(ngModel)]="nomeEmpresa" placeholder="Nome da empresa" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="title" for="cpf_cnpj" position="floating">CPF/CNPJ</ion-label>
+          <ion-input type="text" id="cpfCnpj" name="ccpnpj" [(ngModel)]="cpfCnpj" placeholder="" required ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="title" for="nome" position="floating">Nome</ion-label>
+          <ion-input type="text"  id="nome" name="nome" [(ngModel)]="nomeProprietario" placeholder="Proprietário" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="title" for="email" position="floating">Email</ion-label>
+          <ion-input type="email"  id="email" name="email" [(ngModel)]="email" placeholder="Email do Proprietário" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="title" for="senha" position="floating" >Nova Senha</ion-label>
+          <ion-input  type="password" id="senha" name="senha" [(ngModel)]="senha"   required></ion-input>
+        </ion-item>
+
+      <!-- Ao clicar em proximo, pular para aba para preencher dados de endereço da empresa!-->
+      <ion-button  type="submit" color="primary" size="full"  >Registrar-se</ion-button>
+
+    </form>
+      <ion-button color="primary" fill="clear" size="full" (click)="login()">Login</ion-button>
+
+    </ion-card-content>
+
+
+    </ion-card>
+
+
+  </div>
+
+
+
+</ion-content>

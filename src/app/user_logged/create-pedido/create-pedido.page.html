@@ -1,0 +1,142 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title style="color:white; font-weight:bold"   >
+      ValeBar
+    </ion-title>
+
+
+
+
+   <!--<ion-searchbar  style="height: 0px;"></ion-searchbar>-->
+    <!--<ion-button slot="primary" href="http://localhost:8102/registrar">Registrar</ion-button>-->
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="flex-center">
+
+    <ion-card >
+      <ion-card-header>
+        <ion-card-title class="title" color="primary" >Realizar Pedido</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form  #signIn="ngForm" >
+          <ion-item>
+            <ion-label class="title" for="cliente" position="floating">Cliente</ion-label>
+            <ion-input id="cliente" name="cliente" [(ngModel)]="cliente"  type="text" placeholder="Nome do Cliente" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label  for="idMesa" position="floating"></ion-label>
+            <ion-select id="idMesa" name="idMesa" [(ngModel)]="idMesa" style="color:black; font-weight:bolder ;"  placeholder="Selecionar Mesa" >
+              <ion-select-option value="1">Mesa 01</ion-select-option>
+              <ion-select-option value="2">Mesa 02</ion-select-option>
+              <ion-select-option value="3">Mesa 03</ion-select-option>
+              <ion-select-option value="4">Mesa 04</ion-select-option>
+              <ion-select-option value="5">Mesa 05</ion-select-option>
+              <ion-select-option value="6">Mesa 06</ion-select-option>
+              <ion-select-option value="7">Mesa 07</ion-select-option>
+              <ion-select-option value="8">Mesa 08</ion-select-option>
+              <ion-select-option value="9">Mesa 09</ion-select-option>
+              <ion-select-option value="10">Mesa 10</ion-select-option>
+              <ion-select-option value="11">Mesa 11</ion-select-option>
+              <ion-select-option value="12">Mesa 12</ion-select-option>
+              <ion-select-option value="13">Mesa 13</ion-select-option>
+              <ion-select-option value="14">Mesa 14</ion-select-option>
+              <ion-select-option value="15">Mesa 15</ion-select-option>
+
+            </ion-select>
+          </ion-item>
+
+
+          <br><br>
+            <ion-content>
+              <ion-fab vertical="center" horizontal="center" slot="fixed">
+                <ion-fab-button>
+                  <ion-icon name="cart-outline"></ion-icon>
+                </ion-fab-button>
+                <!--<ion-fab-list side="top">
+                  <ion-fab-button><ion-icon name="beer-outline"></ion-icon></ion-fab-button>
+                </ion-fab-list>-->
+                <!--<ion-fab-list side="bottom">
+                  <ion-fab-button><ion-icon name="fast-food-outline"></ion-icon></ion-fab-button>
+                </ion-fab-list>-->
+                <ion-fab-list side="start" >
+                  <ion-fab-button (click)="bebidas()" ><ion-icon name="beer-outline" style="width:30px;height: 30px;" color="warning"></ion-icon></ion-fab-button>
+                </ion-fab-list>
+                <ion-fab-list side="end">
+                  <ion-fab-button (click)="comidas()" ><ion-icon name="fast-food-outline" style="width:30px;height: 30px;" color="primary"></ion-icon></ion-fab-button>
+                </ion-fab-list>
+              </ion-fab>
+
+            </ion-content>
+
+            <br><br>
+          <!--
+          <ion-content>
+            <ion-fab vertical="center" horizontal="center" slot="fixed">
+              <ion-fab-button>
+                <ion-icon name="bag-handle-outline"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-list side="top">
+                <ion-fab-button><ion-icon name="beer-outline"></ion-icon></ion-fab-button>
+
+              </ion-fab-list>
+              <ion-fab-list side="bottom">
+                <ion-fab-button><ion-icon name=""></ion-icon></ion-fab-button>
+              </ion-fab-list>
+              <ion-fab-list side="start">
+                <ion-fab-button><ion-icon name=""></ion-icon></ion-fab-button>
+              </ion-fab-list>
+              <ion-fab-list side="end">
+                <ion-fab-button><ion-icon name="fast-food-outline"></ion-icon></ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-content>
+        -->
+
+
+          <ion-button type="submit" color="primary" size="full"  >Produtos</ion-button>
+        </form>
+
+      </ion-card-content>
+
+
+
+    </ion-card>
+
+
+  </div>
+
+
+
+<footer>
+  <ion-tabs>
+    <ion-tab-bar >
+      <ion-tab-button (click)="createPedido()">
+        <ion-icon name="cart-outline" ></ion-icon>
+        <ion-label>Vendas</ion-label>
+        <ion-badge>6</ion-badge>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="home()">
+        <ion-icon color="dark"  name="create-outline"  ></ion-icon>
+        <ion-label>Comandas</ion-label>
+      </ion-tab-button>
+
+
+      <ion-tab-button >
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</footer>
+
+
+</ion-content>
+

@@ -1,0 +1,47 @@
+.navbar{
+  --background: var(--ion-color-dark);
+  background-color: black;
+}
+
+
+
+.container {
+  background-color: white;
+  //padding-left: 30px;
+  align-items: center;
+
+  min-width: 400px;
+  //min-height: 32%;
+  max-width: 90%;
+  //max-height: 50%;
+
+  display:flex;
+
+
+
+  //border: 2px solid red;
+
+
+
+}
+
+
+.title{
+  color:white;
+  font-weight:bold;
+}
+.color-black{
+  color:black;
+}
+
+.color-red{
+  color: red;
+}
+
+p{
+  font-size:18px;
+}
+.center-text {
+  font-size: 25px;
+  text-align: center;
+}

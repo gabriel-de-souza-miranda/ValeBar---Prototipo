@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title class="title"  >
+      ValeBar
+    </ion-title>
+   <!--<ion-button slot="primary" (click)="produtos()">+Produto</ion-button>-->
+   <!--<ion-searchbar  style="height: 0px;"></ion-searchbar>-->
+    <!--<ion-button slot="primary" href="http://localhost:8102/registrar">Registrar</ion-button>-->
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+<ion-list style="background-color: grey;">
+  <ion-item-sliding *ngFor="let prod of produtos">
+    <ion-item  >
+
+      <ion-label style="font-size:18px" for="Lanches">{{prod.nome}}</ion-label><pre style="color:green">{{prod.valor | currency:"BRL"}} </pre>
+      <ion-icon id="lanche" (click)="deleteProduto(prod.id)"color="danger" name="trash-outline" style="width:35px;height: 35px;cursor: pointer;"></ion-icon>
+
+
+    </ion-item>
+  </ion-item-sliding>
+</ion-list>
+
+</ion-content>
+
+
+
+
+<!--<button><ion-icon style="width: 50px; height: 50px;"  name="add-circle-outline"></ion-icon></button>-->
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar  >
+      <ion-tab-button (click)="perfil()">
+        <ion-icon color="dark" name="person-outline" ></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="insertProdutos()">
+        <ion-icon color="dark" name="add-circle-outline"></ion-icon>
+        <ion-label>Produtos</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+
+  </ion-tabs>
+   </ion-toolbar>
+</ion-footer>
+

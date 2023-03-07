@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title style="color:white; font-weight:bold"  >
+      ValeBar
+    </ion-title>
+    <!--<ion-button slot="primary" (click)="login()">Login</ion-button>-->
+    <!--<ion-button slot="primary" href="http://localhost:8102/registrar">Registrar</ion-button>-->
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <div class="flex-center">
+    <ion-card >
+      <ion-card-header>
+        <ion-card-title class="title" color="primary" >Endereço </ion-card-title>
+        <!--<ion-button  size="small" class="buttonVoltar" (click)="voltar()" ><ion-icon name="arrow-back"></ion-icon></ion-button>-->
+
+      </ion-card-header>
+
+    <ion-card-content>
+     <form (ngSubmit)="addEndereco()">
+      <ion-item>
+        <ion-label class="title" for="cep" position="floating">CEP</ion-label>
+        <ion-input id="cep" name="cep" type="text" [(ngModel)]="cep" placeholder="Ex: XXXXX-XXX" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="title" for="cidade" position="floating">Cidade</ion-label>
+        <ion-input id="cidade" name="cidade" type="text" [(ngModel)]="cidade" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="title" for="bairro" position="floating">Bairro</ion-label>
+        <ion-input id="bairro" name="bairro" type="text" [(ngModel)]="bairro" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="title" for="rua" position="floating">Rua / Avenida</ion-label>
+        <ion-input id="rua" name="rua" type="text" [(ngModel)]="rua" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="title" for="numero" position="floating">Número</ion-label>
+        <ion-input id="numero" name="numero" type="number" [(ngModel)]="numero" required></ion-input>
+      </ion-item>
+
+      <ion-button type="submit"  color="primary" size="full"  (click)="home()">Finalizar</ion-button>
+   </form>
+
+    </ion-card-content>
+
+
+    </ion-card>
+
+
+  </div>
+
+
+
+</ion-content>

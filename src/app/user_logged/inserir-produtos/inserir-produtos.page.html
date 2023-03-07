@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title style="color:white; font-weight:bold" >
+      ValeBar
+    </ion-title>
+
+    <!--<ion-button slot="primary" href="http://localhost:8102/registrar">Registrar</ion-button>-->
+  </ion-toolbar>
+
+</ion-header>
+  <ion-content>
+    <div class="flex-center">
+      <ion-card >
+        <ion-card-header>
+          <ion-card-title class="title" color="primary" >Produtos</ion-card-title>
+        </ion-card-header>
+
+      <ion-card-content>
+       <form (ngSubmit)="verifProduto()" ng-app="App">
+          <ion-item >
+            <ion-label class="title" for="nome" position="floating">Nome </ion-label>
+            <ion-input type="text" id="nome" name="nome" [(ngModel)]="nome" placeholder="ex: coca lata 350ml" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label  for="tipo" position="floating"></ion-label>
+            <ion-select id="tipo" name="tipo" [(ngModel)]="tipo" style="color:black; font-weight:bolder ;"  placeholder="Selecionar Tipo" >
+              <ion-select-option value="lanche">Lanche</ion-select-option>
+              <ion-select-option value="porcao">Porção</ion-select-option>
+              <ion-select-option value="bebida">Bebida</ion-select-option>
+              <ion-select-option value="refrigerante">Refrigerante</ion-select-option>
+
+
+            </ion-select>
+          </ion-item>
+
+
+          <ion-item >
+            <ion-label class="title" for="valor" position="floating">valor</ion-label>
+            <ion-input type="number" id="valor" name="valor" [(ngModel)]="valor" placeholder="" required></ion-input>
+          </ion-item>
+
+
+
+
+        <!-- Ao clicar em proximo, pular para aba para preencher dados de endereço da empresa!-->
+        <ion-button  type="submit" color="primary" size="full"  >Adicionar Produto</ion-button>
+
+      </form>
+
+
+      </ion-card-content>
+
+
+      </ion-card>
+
+
+    </div>
+
+
+
+  </ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-tab-bar  >
+      <ion-tab-button (click)="home()">
+        <ion-icon color="dark"  name="create-outline"  ></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="perfil()" >
+        <ion-icon color="dark" name="person-outline" ></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-toolbar>
+</ion-footer>
+
+
+

@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="navbar">
+    <ion-title style="color:white; font-weight:bold"   >
+      ValeBar
+    </ion-title>
+
+
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar style="text-align: left;" placeholder="Pesquisar"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider >
+        <ion-label>Pedidos</ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let comanda of comandas" >
+        <ion-item >
+
+          <ion-label style="font-size:18px" > {{comanda.nomeProduto}}</ion-label><pre style="color:green; font-size: 25px;">{{comanda.totalProduto | currency:"BRL"}} </pre>
+          <p>({{comanda.quantidade}}x{{comanda.valorProduto | currency:"BRL"}})</p>
+
+        </ion-item>
+      </ion-item-sliding>
+
+
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar >
+
+        <ion-tab-button (click)="finalizaPedido()">
+          <ion-icon name="cash-outline"></ion-icon>
+          <ion-label>Finalizar Pedido</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="comidas()">
+          <ion-icon name="cart-outline"></ion-icon>
+          <ion-label>Comidas</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="home()">
+          <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          <ion-label>Voltar</ion-label>
+          <ion-badge></ion-badge>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
